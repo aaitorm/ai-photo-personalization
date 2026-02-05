@@ -5,6 +5,7 @@ __pycache__/
 data/inputs
 data/outputs
 data/ready
+data/generated
 
 # C extensions
 *.so
