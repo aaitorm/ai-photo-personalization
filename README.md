@@ -21,10 +21,6 @@ The objective is to improve identity consistency while maintaining diversity in 
 - Prompt variation tests
 - Qualitative comparison across contexts
 
-## Example Outputs
-
-(Add 2–3 generated images here)
-
 ## Tech Stack
 
 - Python
