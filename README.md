@@ -28,8 +28,3 @@ The objective is to improve identity consistency while maintaining diversity in 
 - Diffusers (if used)
 - Transformers (if used)
 
-## How to Run
-
-```bash
-pip install -r requirements.txt
-python train.py
