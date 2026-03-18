@@ -41,9 +41,9 @@ The system follows this pipeline:
 
 Examples of generated images using personalized prompts:
 
-![example1](results/example1.png)
-![example2](results/example2.png)
-![example3](results/example3.png)
+![example1](results/example1.jpg)
+![example2](results/example2.jpg)
+![example3](results/example3.jpg)
 
 ---
 
