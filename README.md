@@ -1,30 +1,87 @@
-# Personalized Diffusion Model
+# AI Photo Personalization with Diffusion Models
 
-Fine-tuning and adaptation of a diffusion model for identity-conditioned image generation.
+End-to-end system for generating personalized images using fine-tuned diffusion models and a FastAPI backend.
+
+---
 
 ## Overview
 
-This project explores the adaptation of a diffusion-based generative model to generate images of a specific individual across multiple contexts using text prompts.
+This project implements a system that generates personalized images of a specific subject in different contexts (e.g., superhero, pilot, beach scenes).
 
-The objective is to improve identity consistency while maintaining diversity in generated outputs.
+The system combines diffusion model fine-tuning with prompt-based generation and a backend API for controlled usage.
 
-## Methodology
+---
 
-- Base model: Stable Diffusion (or specify the one used)
-- Adaptation technique: LoRA / DreamBooth / fine-tuning (specify)
-- Dataset: Custom curated image dataset
-- Hyperparameter tuning for identity preservation and image fidelity
+## Identity Conditioning
 
-## Evaluation
+The model is trained to associate a special token (e.g., `TOK`) with a specific subject identity.
 
-- Visual inspection of identity consistency
-- Prompt variation tests
-- Qualitative comparison across contexts
+During inference, prompts including this token generate images of that subject:
+
+Example:
+"A portrait of TOK as a superhero"
+
+This enables controlled personalization without modifying the model architecture.
+
+---
+
+## System Architecture
+
+The system follows this pipeline:
+
+1. Collect images of a subject
+2. Fine-tune a diffusion model (via Replicate)
+3. Generate images using prompt conditioning
+4. Handle requests through a FastAPI backend
+5. Control usage with rate limiting (Upstash Redis)
+
+---
+
+## Results
+
+Examples of generated images using personalized prompts:
+
+![example1](results/example1.png)
+![example2](results/example2.png)
+![example3](results/example3.png)
+
+---
 
 ## Tech Stack
 
+**Core**
 - Python
-- PyTorch
-- Diffusers (if used)
-- Transformers (if used)
+- FastAPI
 
+**ML & Generative AI**
+- Diffusion models
+- Replicate API
+
+**Infrastructure**
+- Upstash (Redis)
+- Async API handling
+
+---
+
+## Repository Structure
+
+- `src/` → backend and API logic
+- `nbs/` → experimentation and development notebooks
+- `data/references/` → visual reference images for style/context
+- `results/` → generated outputs
+- `requirements.txt` → dependencies
+
+---
+
+## Notes
+
+This project was initially inspired by an online tutorial, but extended with backend integration, API usage control, and structured system design.
+
+---
+
+## Future Improvements
+
+- Add web interface for user interaction
+- Support multiple identities
+- Improve prompt controllability
+- Optimize fine-tuning workflow
